@@ -18,8 +18,10 @@ public class DemoApplication {
 		Bean bean1 = context.getBean("bean", Bean.class);
 		bean1.out();//name is name1
 
-		ApplicationContext context1 = new ClassPathXmlApplicationContext(new String[]{"beans.xml"});
-		Bean bean2 = context1.getBean("bean", Bean.class);
-		bean2.out();//the name is injected Name,because this is a new context.
+		Bean beanPrototype1 = context.getBean("bean_prototype", Bean.class);
+		beanPrototype1.out();
+		beanPrototype1.setName("prototype1");
+		Bean beanPrototype2 = context.getBean("bean_prototype", Bean.class);
+		beanPrototype2.out();
 	}
 }

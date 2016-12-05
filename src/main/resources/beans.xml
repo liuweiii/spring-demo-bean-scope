@@ -7,4 +7,6 @@
     <bean id="bean" class="com.example.beans.Bean"
           p:name="injectedName"/>
 
+    <bean id="bean_prototype" class="com.example.beans.Bean" scope="prototype"
+          p:name="injectedPrototypeName"/>
 </beans>
